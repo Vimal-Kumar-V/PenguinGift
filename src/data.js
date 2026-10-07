@@ -4,7 +4,7 @@
 // Characters: leave a character as null to use the built-in cartoon, or set it
 // to an image/GIF URL to use your own sticker instead.
 
-export const RECIPIENT_NAME = 'Cutie';
+export const RECIPIENT_NAME = 'My Hubby';
 
 export const CHARACTERS = {
   landingPenguin: null, // penguin with arms raised
@@ -31,10 +31,10 @@ export const TEXT = {
   poemTitle: 'HAPPY BIRTHDAY',
   photoCaption: `${RECIPIENT_NAME} ❤️`,
 
-  collageTitle: 'Beautiful girlfriend',
+  collageTitle: 'Handsome husband',
 
-  beMineTitle: 'Will you be mine?',
-  specialDate: '11.05.2026',
+  beMineTitle: 'Mine forever?',
+  specialDate: '11.05.2026', // e.g. your wedding day
 
   hugTitle: 'Virtual hug for ya!',
   missYou: 'I MISS YOU',
@@ -64,14 +64,14 @@ export const POEM = [
   [
     'So blow the candles, make a wish,',
     'and let the frosting hit your nose,',
-    'you’re every sweet and lovely dish,',
-    'the softest petal on the rose.',
+    'you’re still my answer to each wish,',
+    'my husband, as everybody knows.',
   ],
   [
     'Today the whole world sings for you,',
     'and I sing loudest of them all —',
     'happy birthday, through and through,',
-    'my favourite person, big or small.',
+    'I’d marry you again, that’s all.',
   ],
 ];
 
@@ -79,8 +79,8 @@ export const POEM = [
 // top/left/rotate only apply on wider screens; phones show a tidy grid.
 export const COLLAGE_PHOTOS = [
   { src: './photos/love1.jpg', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
-  { src: './photos/love2.jpg', caption: 'My Baby', top: '10%', left: '68%', rotate: 7 },
-  { src: './photos/love3.jpg', caption: 'My sunshine', top: '40%', left: '37%', rotate: -3 },
+  { src: './photos/love2.jpg', caption: 'My Hubby', top: '10%', left: '68%', rotate: 7 },
+  { src: './photos/love3.jpg', caption: 'My hero', top: '40%', left: '37%', rotate: -3 },
   { src: './photos/love4.jpg', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
   { src: './photos/love5.jpg', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
 ];

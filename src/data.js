@@ -1,7 +1,6 @@
 // ✏️  Everything you'd want to personalise lives in this file.
 //
-// Images: any URL works (https://… or a file you drop into /public, e.g. '/me.jpg'
-// → put the file at public/me.jpg and use './me.jpg').
+// Images: any URL works, or a file in public/ — e.g. public/photos/us1.jpg is './photos/us1.jpg'.
 // Characters: leave a character as null to use the built-in cartoon, or set it
 // to an image/GIF URL to use your own sticker instead.
 
@@ -46,7 +45,7 @@ export const TEXT = {
 };
 
 // View 5 — the photo in the polaroid frame.
-export const DEDICATION_PHOTO = 'https://picsum.photos/seed/cutie/480/560';
+export const DEDICATION_PHOTO = './photos/cutie.jpg';
 
 // View 5 — four stanzas, one array of lines each.
 export const POEM = [
@@ -79,19 +78,19 @@ export const POEM = [
 // View 6 — heart-shaped photos scattered around the page.
 // top/left/rotate only apply on wider screens; phones show a tidy grid.
 export const COLLAGE_PHOTOS = [
-  { src: 'https://picsum.photos/seed/love1/400/400', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
-  { src: 'https://picsum.photos/seed/love2/400/400', caption: 'My Baby', top: '10%', left: '68%', rotate: 7 },
-  { src: 'https://picsum.photos/seed/love3/400/400', caption: 'My sunshine', top: '40%', left: '37%', rotate: -3 },
-  { src: 'https://picsum.photos/seed/love4/400/400', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
-  { src: 'https://picsum.photos/seed/love5/400/400', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
+  { src: './photos/love1.jpg', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
+  { src: './photos/love2.jpg', caption: 'My Baby', top: '10%', left: '68%', rotate: 7 },
+  { src: './photos/love3.jpg', caption: 'My sunshine', top: '40%', left: '37%', rotate: -3 },
+  { src: './photos/love4.jpg', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
+  { src: './photos/love5.jpg', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
 ];
 
 // View 7 — tiles of the big heart collage (6 looks best; any number works).
 export const COUPLE_PHOTOS = [
-  'https://picsum.photos/seed/us1/400/400',
-  'https://picsum.photos/seed/us2/400/400',
-  'https://picsum.photos/seed/us3/400/400',
-  'https://picsum.photos/seed/us4/400/400',
-  'https://picsum.photos/seed/us5/400/400',
-  'https://picsum.photos/seed/us6/400/400',
+  './photos/us1.jpg',
+  './photos/us2.jpg',
+  './photos/us3.jpg',
+  './photos/us4.jpg',
+  './photos/us5.jpg',
+  './photos/us6.jpg',
 ];

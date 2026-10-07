@@ -34,7 +34,7 @@ export const TEXT = {
   collageTitle: 'Handsome husband',
 
   beMineTitle: 'Mine forever?',
-  specialDate: '11.05.2026', // e.g. your wedding day
+  specialDate: '09.10.2026', // shown under the heart collage
 
   hugTitle: 'Virtual hug for ya!',
   missYou: 'I MISS YOU',

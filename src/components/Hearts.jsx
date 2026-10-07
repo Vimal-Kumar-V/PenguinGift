@@ -1,61 +1,64 @@
-import { useId } from 'react';
 import { HEART_PATH } from './Buttons.jsx';
 
-// useId output can contain characters that break url(#…) references.
-function useSvgId() {
-  return 'h' + useId().replace(/[^a-zA-Z0-9_-]/g, '');
-}
+// Heart-shaped mask, stretched over its box (the box keeps the heart's 100:92 ratio).
+const HEART_MASK = `url("data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 92" preserveAspectRatio="none"><path d="${HEART_PATH}"/></svg>`,
+)}")`;
 
-// A single photo cropped into a heart with a white sticker edge.
-export function HeartPhoto({ src, alt = '', className = '' }) {
-  const id = useSvgId();
+const maskStyle = {
+  maskImage: HEART_MASK,
+  WebkitMaskImage: HEART_MASK,
+  maskSize: '100% 100%',
+  WebkitMaskSize: '100% 100%',
+};
+
+// A photo entry is a URL or { src, focus }. focus is a CSS object-position such as
+// 'top' or 'center 30%': the part of the photo that stays in view.
+const toPhoto = (p) => (typeof p === 'string' ? { src: p } : p);
+
+function HeartOutline({ colors }) {
   return (
-    <svg viewBox="0 0 100 92" role="img" aria-label={alt} className={`drop-shadow-lg ${className}`}>
-      <defs>
-        <clipPath id={id}>
-          <path d={HEART_PATH} />
-        </clipPath>
-      </defs>
-      <path d={HEART_PATH} fill="#ffc2d1" />
-      <image href={src} width="100" height="92" preserveAspectRatio="xMidYMid slice" clipPath={`url(#${id})`} />
-      <path d={HEART_PATH} fill="none" stroke="#fff" strokeWidth="3.5" />
+    <svg viewBox="0 0 100 92" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+      {colors.map(([stroke, width]) => (
+        <path key={stroke} d={HEART_PATH} fill="none" stroke={stroke} strokeWidth={width} />
+      ))}
     </svg>
   );
 }
 
-// Several photos tiled into one big heart.
-export function HeartCollage({ photos, alt = '', className = '' }) {
-  const id = useSvgId();
-  const cols = Math.ceil(Math.sqrt(photos.length));
-  const rows = Math.ceil(photos.length / cols);
-  const w = 100 / cols;
-  const h = 92 / rows;
-  const gap = 0.8;
-
+// A single photo cropped into a heart with a white sticker edge.
+export function HeartPhoto({ src, focus = 'center', alt = '', className = '' }) {
   return (
-    <svg viewBox="0 0 100 92" role="img" aria-label={alt} className={`drop-shadow-xl ${className}`}>
-      <defs>
-        <clipPath id={id}>
-          <path d={HEART_PATH} />
-        </clipPath>
-      </defs>
-      <path d={HEART_PATH} fill="#fff" />
-      <g clipPath={`url(#${id})`}>
-        {photos.map((src, i) => (
-          <image
+    <div className={`relative aspect-[100/92] drop-shadow-lg ${className}`}>
+      <div className="absolute inset-0 bg-blush" style={maskStyle}>
+        <img src={src} alt={alt} className="h-full w-full object-cover" style={{ objectPosition: focus }} />
+      </div>
+      <HeartOutline colors={[['#fff', 3.5]]} />
+    </div>
+  );
+}
+
+// One or more photos tiled into one big heart.
+export function HeartCollage({ photos, alt = '', className = '' }) {
+  const cols = Math.ceil(Math.sqrt(photos.length));
+  return (
+    <div role="img" aria-label={alt} className={`relative aspect-[100/92] drop-shadow-xl ${className}`}>
+      <div
+        className="absolute inset-0 grid gap-1 bg-white"
+        style={{ ...maskStyle, gridTemplateColumns: `repeat(${cols}, 1fr)`, gridAutoRows: '1fr' }}
+      >
+        {photos.map(toPhoto).map((photo, i) => (
+          <img
             key={i}
-            href={src}
-            x={(i % cols) * w + gap}
-            y={Math.floor(i / cols) * h + gap}
-            width={w - gap * 2}
-            height={h - gap * 2}
-            preserveAspectRatio="xMidYMid slice"
+            src={photo.src}
+            alt=""
+            className="h-full min-h-0 w-full object-cover"
+            style={{ objectPosition: photo.focus ?? 'center' }}
           />
         ))}
-      </g>
-      <path d={HEART_PATH} fill="none" stroke="#fff" strokeWidth="2.5" />
-      <path d={HEART_PATH} fill="none" stroke="#ff8fab" strokeWidth="0.8" />
-    </svg>
+      </div>
+      <HeartOutline colors={[['#fff', 2.5], ['#ff8fab', 0.8]]} />
+    </div>
   );
 }
 

@@ -13,7 +13,7 @@ export default function Poem({ go }) {
           <Cloud className="absolute -top-10 -right-14 z-10 w-28 animate-float" />
           <figure className="relative -rotate-3 bg-white p-3 pb-4 shadow-xl transition duration-300 hover:scale-105 hover:rotate-0">
             <span className="absolute -top-4 left-1/2 h-8 w-28 -translate-x-1/2 rotate-2 bg-blush/70" aria-hidden="true" />
-            <img src={DEDICATION_PHOTO} alt={TEXT.photoCaption} className="h-80 w-64 object-cover md:h-96 md:w-72" />
+            <img src={DEDICATION_PHOTO} alt={TEXT.photoCaption} className="h-80 w-64 object-cover object-top md:h-96 md:w-72" />
             <figcaption className="mt-3 text-3xl">{TEXT.photoCaption}</figcaption>
           </figure>
           <Bunny className="absolute -bottom-6 -left-12 z-10 w-24 -rotate-12" />

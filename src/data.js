@@ -1,6 +1,8 @@
 // ✏️  Everything you'd want to personalise lives in this file.
 //
 // Images: any URL works, or a file in public/ — e.g. public/photos/us1.jpg is './photos/us1.jpg'.
+// Heart-cropped photos take an optional focus (a CSS object-position, e.g. 'top' or 'center 30%')
+// that picks which part of the photo stays in view.
 // Characters: leave a character as null to use the built-in cartoon, or set it
 // to an image/GIF URL to use your own sticker instead.
 
@@ -45,7 +47,7 @@ export const TEXT = {
 };
 
 // View 5 — the photo in the polaroid frame.
-export const DEDICATION_PHOTO = './photos/cutie.jpg';
+export const DEDICATION_PHOTO = './photos/us-colour.jpg';
 
 // View 5 — four stanzas, one array of lines each.
 export const POEM = [
@@ -78,19 +80,13 @@ export const POEM = [
 // View 6 — heart-shaped photos scattered around the page.
 // top/left/rotate only apply on wider screens; phones show a tidy grid.
 export const COLLAGE_PHOTOS = [
-  { src: './photos/love1.jpg', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
-  { src: './photos/love2.jpg', caption: 'My Hubby', top: '10%', left: '68%', rotate: 7 },
+  { src: './photos/us-colour.jpg', focus: 'center 40%', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
+  { src: './photos/us-portrait.jpg', focus: 'center 10%', caption: 'My Hubby', top: '10%', left: '68%', rotate: 7 },
   { src: './photos/love3.jpg', caption: 'My hero', top: '40%', left: '37%', rotate: -3 },
   { src: './photos/love4.jpg', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
   { src: './photos/love5.jpg', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
 ];
 
-// View 7 — tiles of the big heart collage (6 looks best; any number works).
-export const COUPLE_PHOTOS = [
-  './photos/us1.jpg',
-  './photos/us2.jpg',
-  './photos/us3.jpg',
-  './photos/us4.jpg',
-  './photos/us5.jpg',
-  './photos/us6.jpg',
-];
+// View 7 — photos tiled into the big heart. One fills the whole heart; add more to make a grid
+// (e.g. './photos/us1.jpg' … './photos/us6.jpg').
+export const COUPLE_PHOTOS = [{ src: './photos/us-portrait.jpg', focus: 'center 8%' }];

@@ -17,7 +17,7 @@ export default function Collage({ go }) {
             style={{ '--top': photo.top, '--left': photo.left, '--rot': `${photo.rotate}deg` }}
           >
             <div className="transition duration-300 hover:scale-110 hover:-rotate-3">
-              <HeartPhoto src={photo.src} focus={photo.focus} alt={photo.caption} className="w-full" />
+              <HeartPhoto src={photo.src} focus={photo.focus} zoom={photo.zoom} alt={photo.caption} className="w-full" />
             </div>
             <figcaption className="mt-1 text-2xl">{photo.caption}</figcaption>
           </figure>

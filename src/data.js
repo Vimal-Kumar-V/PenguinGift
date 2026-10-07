@@ -79,12 +79,13 @@ export const POEM = [
 
 // View 6 — heart-shaped photos scattered around the page.
 // top/left/rotate only apply on wider screens; phones show a tidy grid.
+// zoom: 2 makes a close-up; focus then picks the spot, like CSS background-position.
 export const COLLAGE_PHOTOS = [
   { src: './photos/us-colour.jpg', focus: 'center 40%', caption: 'My love', top: '14%', left: '6%', rotate: -8 },
   { src: './photos/us-portrait.jpg', focus: 'center 10%', caption: 'My Hubby', top: '10%', left: '68%', rotate: 7 },
-  { src: './photos/love3.jpg', caption: 'My hero', top: '40%', left: '37%', rotate: -3 },
-  { src: './photos/love4.jpg', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
-  { src: './photos/love5.jpg', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
+  { src: './photos/us-colour.jpg', zoom: 2, focus: '100% 18%', caption: 'My hero', top: '40%', left: '37%', rotate: -3 },
+  { src: './photos/us-portrait.jpg', zoom: 2, focus: '98% 30%', caption: 'My favourite', top: '58%', left: '8%', rotate: 6 },
+  { src: './photos/us-colour.jpg', zoom: 2, focus: '0% 40%', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
 ];
 
 // View 7 — photos tiled into the big heart. One fills the whole heart; add more to make a grid

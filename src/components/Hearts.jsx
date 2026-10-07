@@ -27,11 +27,21 @@ function HeartOutline({ colors }) {
 }
 
 // A single photo cropped into a heart with a white sticker edge.
-export function HeartPhoto({ src, focus = 'center', alt = '', className = '' }) {
+// zoom (e.g. 2) enlarges the photo for a close-up; focus then works like background-position.
+export function HeartPhoto({ src, focus = 'center', zoom, alt = '', className = '' }) {
   return (
     <div className={`relative aspect-[100/92] drop-shadow-lg ${className}`}>
       <div className="absolute inset-0 bg-blush" style={maskStyle}>
-        <img src={src} alt={alt} className="h-full w-full object-cover" style={{ objectPosition: focus }} />
+        {zoom ? (
+          <div
+            role="img"
+            aria-label={alt}
+            className="h-full w-full bg-no-repeat"
+            style={{ backgroundImage: `url("${src}")`, backgroundSize: `${zoom * 100}% auto`, backgroundPosition: focus }}
+          />
+        ) : (
+          <img src={src} alt={alt} className="h-full w-full object-cover" style={{ objectPosition: focus }} />
+        )}
       </div>
       <HeartOutline colors={[['#fff', 3.5]]} />
     </div>

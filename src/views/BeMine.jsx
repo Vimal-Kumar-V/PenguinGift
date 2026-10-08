@@ -15,7 +15,7 @@ export default function BeMine({ go }) {
         <HeartCollage photos={COUPLE_PHOTOS} alt="Us" className="w-full" />
       </div>
       <p className="relative font-cute text-3xl tracking-[0.3em] md:text-4xl">{TEXT.specialDate}</p>
-      <ClickMe onClick={() => go(PAGES.MENU)}>{TEXT.clickMe}</ClickMe>
+      <ClickMe onClick={() => go(PAGES.STORY)}>{TEXT.clickMe}</ClickMe>
     </Screen>
   );
 }

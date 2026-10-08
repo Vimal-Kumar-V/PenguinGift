@@ -25,7 +25,8 @@ them as `'./us1.jpg'`. Any character (penguins, bears) can be replaced by settin
 | 4 | HAPPY BIRTHDAY + cake penguin | → 5 |
 | 5 | Polaroid + poem | → 3 |
 | 6 | Heart photo collage | → 7 |
-| 7 | Will you be mine? | → 3 |
+| 7 | Mine forever? (heart photo collage) | → Our little story |
+| 7b | Our little story (polaroid wall of every photo) | → 3 |
 | 8 | Virtual hug | → 9 |
 | 9 | I LOVE YOU | (start over) |
 

@@ -7,6 +7,7 @@ import BirthdayWish from './views/BirthdayWish.jsx';
 import Poem from './views/Poem.jsx';
 import Collage from './views/Collage.jsx';
 import BeMine from './views/BeMine.jsx';
+import OurStory from './views/OurStory.jsx';
 import VirtualHug from './views/VirtualHug.jsx';
 import ILoveYou from './views/ILoveYou.jsx';
 
@@ -18,6 +19,7 @@ const VIEWS = {
   [PAGES.POEM]: Poem,
   [PAGES.COLLAGE]: Collage,
   [PAGES.BE_MINE]: BeMine,
+  [PAGES.STORY]: OurStory,
   [PAGES.HUG]: VirtualHug,
   [PAGES.LOVE]: ILoveYou,
 };

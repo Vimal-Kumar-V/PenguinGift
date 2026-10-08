@@ -95,7 +95,7 @@ export const COLLAGE_PHOTOS = [
 export const COUPLE_PHOTOS = [
   { src: './photos/wedding-garland.jpg', focus: 'center 40%' },
   { src: './photos/us-portrait.jpg', focus: 'center 15%' },
-  { src: './photos/mehndi.jpg', focus: 'center 45%' },
+  { src: './photos/forest-selfie.jpg', focus: '0% center', zoom: 1.4, origin: '33% 62%' },
   { src: './photos/wedding-forehead.jpg', focus: 'center 22%' },
 ];
 

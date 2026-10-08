@@ -48,7 +48,8 @@ export function HeartPhoto({ src, focus = 'center', zoom, alt = '', className = 
   );
 }
 
-// One or more photos tiled into one big heart.
+// One or more photos tiled into one big heart. A tile can also take zoom (e.g. 1.4)
+// with origin, the point it zooms around, to nudge faces into the part the heart shows.
 export function HeartCollage({ photos, alt = '', className = '' }) {
   const cols = Math.ceil(Math.sqrt(photos.length));
   return (
@@ -58,13 +59,18 @@ export function HeartCollage({ photos, alt = '', className = '' }) {
         style={{ ...maskStyle, gridTemplateColumns: `repeat(${cols}, 1fr)`, gridAutoRows: '1fr' }}
       >
         {photos.map(toPhoto).map((photo, i) => (
-          <img
-            key={i}
-            src={photo.src}
-            alt=""
-            className="h-full min-h-0 w-full object-cover"
-            style={{ objectPosition: photo.focus ?? 'center' }}
-          />
+          <div key={i} className="min-h-0 overflow-hidden">
+            <img
+              src={photo.src}
+              alt=""
+              className="h-full w-full object-cover"
+              style={{
+                objectPosition: photo.focus ?? 'center',
+                transform: photo.zoom ? `scale(${photo.zoom})` : undefined,
+                transformOrigin: photo.origin ?? 'center',
+              }}
+            />
+          </div>
         ))}
       </div>
       <HeartOutline colors={[['#fff', 2.5], ['#ff8fab', 0.8]]} />

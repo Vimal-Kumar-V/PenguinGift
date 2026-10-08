@@ -91,12 +91,11 @@ export const COLLAGE_PHOTOS = [
   { src: './photos/flower-stand.jpg', zoom: 1.7, focus: '50% 18%', caption: 'My everything', top: '56%', left: '70%', rotate: -6 },
 ];
 
-// View 7 — photos tiled into the big heart. One fills the whole heart; more make a grid.
+// View 7 — photos tiled into the big heart: two on top, one wide photo (span: 2) across the bottom.
 export const COUPLE_PHOTOS = [
   { src: './photos/wedding-garland.jpg', focus: 'center 40%' },
   { src: './photos/us-portrait.jpg', focus: 'center 15%' },
-  { src: './photos/forest-selfie.jpg', focus: '0% center', zoom: 1.4, origin: '33% 62%' },
-  { src: './photos/wedding-forehead.jpg', focus: 'center 22%' },
+  { src: './photos/forest-selfie.jpg', focus: 'center 55%', span: 2 },
 ];
 
 // "Our little story" — a scrapbook wall of polaroids, in this order.
